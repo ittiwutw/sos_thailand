@@ -76,7 +76,8 @@ export default {
     },
     async Delete (val) {
       var data = {
-        serviceTypeId: val.serviceTypeId
+        tableName: 'serviceType',
+        where: `serviceTypeId = ${val.serviceTypeId}`
       }
       this.$store.dispatch('DeleteListService', data)
       var res = this.$store.state.ModuleApi.DeleteListService
